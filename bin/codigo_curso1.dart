@@ -1,31 +1,40 @@
 /*
- +-+-+-+-+-+ +-+-+ +-+-+-+-+-+ +-+ +-+-+-+
- |T|i|p|o|s| |d|e| |d|a|t|o|s| |-| |M|a|p|
- +-+-+-+-+-+-+-+-+ +-+-+-+-+-+ +-+ +-+-+-+
- |C|l|a|s|e|1|2|
+ +-+-+-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+
+ |F|u|n|c|i|o|n|e|s| |e|n| |D|a|r|t|
+ +-+-+-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+
+ |C|l|a|s|e|1|3|
  +-+-+-+-+-+-+-+
 */
 
 void main() {
-  Map persona = {
-    'nombre': 'Tux',
-    'edad': 35,
-    'soltero': false,
-    true: false,
-    1: 100,
-    2: 500,
-  };
-  //La variable tipo Map la llave debe apuntar exactamente como esrta declarada
-  //en el mapa, asi sea un numero, string u objeto
+  final String nombre = 'SuperTuX';
+  saludar4(nombre: 'TuX', mensaje: 'Hi');
 
-// Se puede agregar un generico a la declaracion de la variable para forzar
-//El tipo de dato que acepta, tanto de al llave como del valor
-  Map<String, dynamic> persona2 = {
-    'nombre': 'Tux',
-    'edad': 35,
-    'soltero': false,
-  };
+  //Los argumentos son mandados por valor, si son datos primitivos
+  //Los objetos son mandados por referencia
+}
 
-  persona2.addAll({'segundoNombre': 'Juan'});
-  print(persona2);
+//Argumentos posisionales oblogatorios
+void saludar(String nombre) {
+  print('Hola $nombre');
+}
+
+//Argumentos opcionales
+void saludar2([String nombre = 'No Name']) {
+  print('Hola $nombre');
+}
+
+//Combinacion de argumentos posicionales obligatorios y opcionales
+void saludar3(String nombre, [String mensaje = 'Hi']) {
+  print('$mensaje $nombre');
+}
+
+//Argumentos por nombre,
+//required, especifica que para usar la funcion es requerido que el argumento
+//pase un valor
+void saludar4({
+  required String nombre,
+  required String mensaje,
+}) {
+  print('$mensaje $nombre');
 }
