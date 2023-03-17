@@ -22,5 +22,13 @@ void main(List<String> arguments) {
   //Sgregamos un string a la lista
   listaSimple.add('Tux');
 
-  print(listaSimple);
+  //A la definicion del tipo de dato que contiene la lista
+  //se le llama generico y va encerrado entre <TipoDeDato>
+  List<int> listaConTipoGenerico = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  listaConTipoGenerico.add(11);
+
+  //Constructor generador de listas
+  final masNumeros = List.generate(100, (index) => 10);
+
+  print(masNumeros);
 }
